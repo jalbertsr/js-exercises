@@ -39,16 +39,17 @@ function reverse (str) {
   return str.map()
 }
 
-function translete (str) {
+function translate (str) {
   var translator = { 'merry': 'god', 'christmas': 'jul', 'and': 'och', 'happy': 'gott', 'new': 'nytt', 'year': 'år' }
   str = str.split(' ')
-
   for (var i = 0; i < str.length; i++) {
-    Object.keys(translator).forEach(function (key) {
-      if (key === str[i]) {
-        str[i] === translator[key]
-      }
-    })
+    console.log(str[i]);
+    console.log(translator[i]);
+    if(translator.hasOwnProperty(str[i])){
+      str[i] = translator[str[i]];
+      console.log(str[i]);
+      console.log(translator[i]);
+    }
   }
   return str.join('')
 }
