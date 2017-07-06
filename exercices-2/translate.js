@@ -14,3 +14,7 @@ function translate(str) {
   }
   return translated
 }
+
+function translate(str){
+  return 
+}

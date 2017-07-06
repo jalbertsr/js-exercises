@@ -23,7 +23,7 @@ Represent the frequency listing as a Javascript object. Try it with something li
 */
 function charFreq(str) {
   str = str.split('')
-  frequency = {}
+  var frequency = {}
   for (var i = 0; i < str.length; i++) {
     if (frequency.hasOwnProperty(str[i])) {
       frequency[str[i]]++
@@ -32,4 +32,27 @@ function charFreq(str) {
     }
   }
   return frequency
+}
+charFreq();
+//forEach Way
+function charFreq(str) {
+  str = str.split('')
+  var frequency = {}
+  str.forEach(function(item) {
+    if (frequency.hasOwnProperty(item)) { //frquency[item] --> return undefined --> value false
+      frequency[item]++
+    } else {
+      frequency[item] = 1
+    }
+  })
+  return frequency
+}
+
+//reduce WAY
+
+function charFreq(text) {
+  return text.split('').reduce(function(oFrequency, sChar) {
+    (oFrequency[sChar]) ? oFrequency[sChar]++ : oFrequency[sChar] = 1;
+    return oFrequency
+  }, {})
 }

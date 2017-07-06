@@ -4,13 +4,21 @@ Represent a small bilingual lexicon as a Javascript object in the following fash
 and use it to translate your Christmas cards from English into Swedish.
 */
 
-function translate(str) {
-  var translator = { 'merry': 'god', 'christmas': 'jul', 'and': 'och', 'happy': 'gott', 'new': 'nytt', 'year': 'år' }
-  str = str.split(' ');
+function translate (str) {
+  var dictionary = { 'merry': 'god', 'christmas': 'jul', 'and': 'och', 'happy': 'gott', 'new': 'nytt', 'year': 'år' }
+  str = str.split(' ')
   for (var i = 0; i < str.length; i++) {
-    if (translator.hasOwnProperty(str[i])) {
-      str[i] = translator[str[i]];
+    if (dictionary.hasOwnProperty(str[i])) {
+      str[i] = dictionary[str[i]]
     }
   }
-  return str.join(' ');
+  return str.join(' ')
+}
+function translate ('happy new year')
+
+function translate (text){
+	for(word in dictionary){
+		text = text.replace(new RegExp(word, "g"), dictionary[word]);
+	}
+	return text; 
 }
