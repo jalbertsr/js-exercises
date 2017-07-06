@@ -5,8 +5,8 @@ function translate(str) {
   var vowels = ['a', 'e', 'i', 'o', 'u', ' ']
   var translated = ''
   for (i = 0; i < str.length; i++) {
-    var current = str.charAt(i) // for every letter
-    if (vowels.indexOf(current) != -1) { // if current is finded
+    var current = str.charAt(i) 
+    if (vowels.indexOf(current) != -1) { 
       translated += current
     } else {
       translated += (current + 'o' + current)
@@ -15,6 +15,7 @@ function translate(str) {
   return translated
 }
 
-function translate(str){
-  return 
+//regex way
+function translate( text ) {
+  return text.replace(/[b-df-hj-np-tv-z]/g, "$&o$&")
 }
