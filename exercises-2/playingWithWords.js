@@ -50,9 +50,7 @@ function charFreq(str) {
 
 //reduce WAY
 
-function charFreq(text) {
-  return text.split('').reduce(function(oFrequency, sChar) {
-    (oFrequency[sChar]) ? oFrequency[sChar]++ : oFrequency[sChar] = 1;
-    return oFrequency
-  }, {})
-}
+const charFreq = (text) => text.split(' ').reduce((oFrequency, sChar) => {
+  (oFrequency[sChar]) ? oFrequency[sChar]++ : oFrequency[sChar] = 1;
+  return oFrequency
+}, {});
